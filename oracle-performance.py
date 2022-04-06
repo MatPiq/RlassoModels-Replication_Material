@@ -77,13 +77,13 @@ class OraclePerformance:
 
             for k, m_name in enumerate(models):
 
-                results[f"{m_name}_avg"].append(risks_tmp[:, k].mean())
-                results[f"{m_name}_sd"].append(risks_tmp[:, k].std())
-                results[f"{m_name}_support"].append(risks_tmp[:, k].mean())
+                results[f"{m_name} avg"].append(risks_tmp[:, k].mean())
+                results[f"{m_name} sd"].append(risks_tmp[:, k].std())
+                results[f"{m_name} support"].append(risks_tmp[:, k].mean())
 
         self.results = pd.DataFrame(results)
         if self.save_results:
-            self.results.to_csv("outputs/tables/oracle-performance.csv")
+            self.results.to_csv("output/data/oracle-performance.csv")
 
         return self
 
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     sigmas = np.linspace(0.3, 3, 10)
     oracle_performance = OraclePerformance(
         sigmas=sigmas,
-        n_sims=1000,
+        n_sims=100,
         n=100,
         p=500,
         save_results=True,
