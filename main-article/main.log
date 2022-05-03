@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.8)  3 MAY 2022 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.8)  3 MAY 2022 22:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -329,6 +329,13 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count315
+\float@exts=\toks49
+\float@box=\box61
+\@float@everytoks=\toks50
+\@floatcapt=\box62
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -346,21 +353,21 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 \Gin@req@width=\dimen282
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\enitkv@toks@=\toks49
+\enitkv@toks@=\toks51
 \labelindent=\skip59
 \enit@outerparindent=\dimen283
-\enit@toks=\toks50
-\enit@inbox=\box61
-\enit@count@id=\count315
-\enitdp@description=\count316
+\enit@toks=\toks52
+\enit@inbox=\box63
+\enit@count@id=\count316
+\enitdp@description=\count317
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/physics/physics.sty
 Package: physics 
  (/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2022-02-24 L3 programming layer (loader) 
  (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count317
-\l__pdf_internal_box=\box62
+\l__color_backend_stack_int=\count318
+\l__pdf_internal_box=\box64
 ))
 Package: xparse 2022-01-12 L3 Experimental document command parser
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/bbm-macros/bbm.sty
@@ -395,10 +402,10 @@ Package pdftexcmds Info: \pdfdraftmode found.
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/local/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(/usr/local/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
@@ -408,8 +415,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen284
-\Hy@linkcounter=\count318
-\Hy@pagecounter=\count319
+\Hy@linkcounter=\count319
+\Hy@pagecounter=\count320
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -419,7 +426,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count320
+\Hy@SavedSpaceFactor=\count321
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -433,7 +440,7 @@ Package hyperref Info: Plain pages OFF on input line 4152.
 Package hyperref Info: Backreferencing OFF on input line 4157.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4390.
-\c@Hy@tempcnt=\count321
+\c@Hy@tempcnt=\count322
  (/usr/local/texlive/2022/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -445,7 +452,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count322
+\Fld@menulength=\count323
 \Field@Width=\dimen286
 \Fld@charsize=\dimen287
 Package hyperref Info: Hyper figures OFF on input line 6027.
@@ -461,9 +468,9 @@ LaTeX Info: Redefining \pageref on input line 6101.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count323
-\c@Item=\count324
-\c@Hfootnote=\count325
+\Hy@abspage=\count324
+\c@Item=\count325
+\c@Hfootnote=\count326
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -472,8 +479,8 @@ File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count326
-\c@bookmark@seq@number=\count327
+\Fld@listcount=\count327
+\c@bookmark@seq@number=\count328
  (/usr/local/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -485,23 +492,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/pythonhighlight/pythonhighlight.sty
 Package: pythonhighlight 2017/02/09 python code highlighting; provided by Olivier Verdier <olivier.verdier@gmail.com>
  (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count328
-\lst@gtempboxa=\box63
-\lst@token=\toks51
-\lst@length=\count329
+\lst@mode=\count329
+\lst@gtempboxa=\box65
+\lst@token=\toks53
+\lst@length=\count330
 \lst@currlwidth=\dimen288
-\lst@column=\count330
-\lst@pos=\count331
+\lst@column=\count331
+\lst@pos=\count332
 \lst@lostspace=\dimen289
 \lst@width=\dimen290
-\lst@newlines=\count332
-\lst@lineno=\count333
+\lst@newlines=\count333
+\lst@lineno=\count334
 \lst@maxwidth=\dimen291
  (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count334
-\lst@skipnumbers=\count335
-\lst@framebox=\box64
+\c@lstnumber=\count335
+\lst@skipnumbers=\count336
+\lst@framebox=\box66
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
@@ -510,11 +517,11 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 Package: pygmentex 2020/12/21 v0.10 A Pygmentex layer for LaTeX
  (/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
-\FV@CodeLineNo=\count336
+\FV@CodeLineNo=\count337
 \FV@InFile=\read3
-\FV@TabBox=\box65
-\c@FancyVerbLine=\count337
-\FV@StepNumber=\count338
+\FV@TabBox=\box67
+\c@FancyVerbLine=\count338
+\FV@StepNumber=\count339
 \FV@OutFile=\write4
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
@@ -534,19 +541,20 @@ Package caption Info: AMS or SMF document class detected.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/caption/caption-ams-smf.sto
 File: caption-ams-smf.sto 2020/08/22 v2.0 Adaption of the caption package to the AMS and SMF document classes (AR)
 ))
-\c@caption@flags=\count339
-\c@continuedfloat=\count340
+\c@caption@flags=\count340
+\c@continuedfloat=\count341
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/local/texlive/2022/texmf-dist/tex/latex/efbox/efbox.sty
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/efbox/efbox.sty
 Package: efbox 2014/03/19 1.0 An enhanced fbox command.
 Package: efbox 2014/03/19 v1.0 An enhanced fbox command
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
  (/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count341
+\etb@tempcnta=\count342
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/zref/zref-abspage.sty
 Package: zref-abspage 2020-07-03 v2.32 Module abspage for zref (HO)
  (/usr/local/texlive/2022/texmf-dist/tex/latex/zref/zref-base.sty
@@ -555,13 +563,13 @@ Package zref Info: New property list: main on input line 764.
 Package zref Info: New property: default on input line 765.
 Package zref Info: New property: page on input line 766.
 )
-\c@abspage=\count342
+\c@abspage=\count343
 Package zref Info: New property: abspage on input line 66.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip61
-\c@mdf@globalstyle@cnt=\count343
+\c@mdf@globalstyle@cnt=\count344
 \mdf@skipabove@length=\skip62
 \mdf@skipbelow@length=\skip63
 \mdf@leftmargin@length=\skip64
@@ -602,11 +610,11 @@ Package: needspace 2010/09/12 v1.3d reserve vertical space
 \mdf@subsubtitleinneraboveskip@length=\skip99
 \mdf@subsubtitleinnerbelowskip@length=\skip100
  (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks52
+\pgfutil@everybye=\toks54
 \pgfutil@tempdima=\dimen300
 \pgfutil@tempdimb=\dimen301
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box66
+\pgfutil@abb=\box68
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
 ))
@@ -626,14 +634,14 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@yd=\dimen311
 \w@pgf@writea=\write5
 \r@pgf@reada=\read4
-\c@pgf@counta=\count344
-\c@pgf@countb=\count345
-\c@pgf@countc=\count346
-\c@pgf@countd=\count347
-\t@pgf@toka=\toks53
-\t@pgf@tokb=\toks54
-\t@pgf@tokc=\toks55
-\pgf@sys@id@count=\count348
+\c@pgf@counta=\count345
+\c@pgf@countb=\count346
+\c@pgf@countc=\count347
+\c@pgf@countd=\count348
+\t@pgf@toka=\toks55
+\t@pgf@tokb=\toks56
+\t@pgf@tokc=\toks57
+\pgf@sys@id@count=\count349
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -644,14 +652,14 @@ File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count349
-\pgfsyssoftpath@bigbuffer@items=\count350
+\pgfsyssoftpath@smallbuffer@items=\count350
+\pgfsyssoftpath@bigbuffer@items=\count351
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
- (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@picminx=\dimen312
 \pgf@picmaxx=\dimen313
@@ -677,10 +685,10 @@ File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@shorten@start@additional=\dimen329
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box67
-\pgf@hbox=\box68
-\pgf@layerbox@main=\box69
-\pgf@picture@serial@count=\count351
+\pgfpic=\box69
+\pgf@hbox=\box70
+\pgf@layerbox@main=\box71
+\pgf@picture@serial@count=\count352
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgflinewidth=\dimen330
@@ -701,13 +709,13 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen335
-\pgf@sys@shading@range@num=\count352
-\pgf@shadingcount=\count353
+\pgf@sys@shading@range@num=\count353
+\pgf@shadingcount=\count354
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box70
+\pgfexternal@startupbox=\box72
 )) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -718,7 +726,7 @@ File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box71
+\pgfnodeparttextbox=\box73
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
@@ -727,19 +735,19 @@ Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@nodesepend=\dimen337
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
-)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen338
 \pgffor@skip=\dimen339
-\pgffor@stack=\toks56
-\pgffor@toks=\toks57
+\pgffor@stack=\toks58
+\pgffor@toks=\toks59
 )) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count354
+\pgf@plot@mark@count=\count355
 \pgfplotmarksize=\dimen340
 )
 \tikz@lastx=\dimen341
@@ -750,31 +758,31 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@lastmovetoy=\dimen346
 \tikzleveldistance=\dimen347
 \tikzsiblingdistance=\dimen348
-\tikz@figbox=\box72
-\tikz@figbox@bg=\box73
-\tikz@tempbox=\box74
-\tikz@tempbox@bg=\box75
-\tikztreelevel=\count355
-\tikznumberofchildren=\count356
-\tikznumberofcurrentchild=\count357
-\tikz@fig@count=\count358
+\tikz@figbox=\box74
+\tikz@figbox@bg=\box75
+\tikz@tempbox=\box76
+\tikz@tempbox@bg=\box77
+\tikztreelevel=\count356
+\tikznumberofchildren=\count357
+\tikznumberofcurrentchild=\count358
+\tikz@fig@count=\count359
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count359
-\pgfmatrixcurrentcolumn=\count360
-\pgf@matrix@numberofcolumns=\count361
+\pgfmatrixcurrentrow=\count360
+\pgfmatrixcurrentcolumn=\count361
+\pgf@matrix@numberofcolumns=\count362
 )
-\tikz@expandcount=\count362
+\tikz@expandcount=\count363
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/local/texlive/2022/texmf-dist/tex/latex/mdframed/md-frame-1.mdf
 File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 )
-\mdf@frametitlebox=\box76
-\mdf@footnotebox=\box77
-\mdf@splitbox@one=\box78
-\mdf@splitbox@two=\box79
-\mdf@splitbox@save=\box80
+\mdf@frametitlebox=\box78
+\mdf@footnotebox=\box79
+\mdf@splitbox@one=\box80
+\mdf@splitbox@two=\box81
+\mdf@splitbox@save=\box82
 \mdfsplitboxwidth=\skip101
 \mdfsplitboxtotalwidth=\skip102
 \mdfsplitboxheight=\skip103
@@ -802,16 +810,16 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 \mdf@horizontalspaceofbox=\skip125
 \mdfsubtitleheight=\skip126
 \mdfsubsubtitleheight=\skip127
-\c@mdfcountframes=\count363
+\c@mdfcountframes=\count364
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count364
-\c@mdf@env@i=\count365
-\c@mdf@env@ii=\count366
-\c@mdf@zref@counter=\count367
+\mdf@envdepth=\count365
+\c@mdf@env@i=\count366
+\c@mdf@env@ii=\count367
+\c@mdf@zref@counter=\count368
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 Package caption Info: Option `declare type' requires the `newfloat' package on input line 17.
@@ -819,9 +827,8 @@ Package caption Info: Option `declare type' requires the `newfloat' package on i
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
 )
 Package newfloat Info: New float `pygcode' with options `' on input line 17.
-\c@pygcode=\count368
-\newfloat@ftype=\count369
-Package newfloat Info: float type `pygcode'=8 on input line 17.
+\c@pygcode=\count369
+Package newfloat Info: float type `pygcode'=4 on input line 17.
 \pygmented@outfile=\write6
 \pygmented@counter=\count370
 \pygmented@leftmargin=\dimen349
@@ -831,7 +838,11 @@ Package newfloat Info: float type `pygcode'=8 on input line 17.
 )
 \openout6 = `main.snippets'.
 
- (./main.aux)
+ (./main.aux
+
+LaTeX Warning: Label `fig:rlasso-performance' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -867,15 +878,15 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count371
 \scratchdimen=\dimen352
-\scratchbox=\box81
+\scratchbox=\box83
 \nofMPsegments=\count372
 \nofMParguments=\count373
-\everyMPshowfont=\toks58
+\everyMPshowfont=\toks60
 \MPscratchCnt=\count374
 \MPscratchDim=\dimen353
 \MPnumerator=\count375
 \makeMPintoPDFobject=\count376
-\everyMPtoPDFconversion=\toks59
+\everyMPtoPDFconversion=\toks61
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -903,6 +914,7 @@ LaTeX Info: Redefining \nameref on input line 42.
 \c@lstlisting=\count378
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+Package newfloat Info: `float' package detected.
 
 
 Package natbib Warning: Citation `Breiman2001' on page 1 undefined on input line 83.
@@ -930,19 +942,32 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 200.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [3]
+)
+<../outputs/figs/runtime-benchmark.pdf, id=186, 643.72667pt x 635.97598pt>
+File: ../outputs/figs/runtime-benchmark.pdf Graphic file (type pdf)
+<use ../outputs/figs/runtime-benchmark.pdf>
+Package pdftex.def Info: ../outputs/figs/runtime-benchmark.pdf  used on input line 206.
+(pdftex.def)             Requested size: 360.0pt x 355.66861pt.
 
-LaTeX Warning: Reference `tab:rlasso-performance' on page 4 undefined on input line 242.
-
-<figs/rlasso-oracle.pdf, id=204, 433.62pt x 216.81pt>
-File: figs/rlasso-oracle.pdf Graphic file (type pdf)
-<use figs/rlasso-oracle.pdf>
-Package pdftex.def Info: figs/rlasso-oracle.pdf  used on input line 253.
-(pdftex.def)             Requested size: 360.0pt x 180.00848pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./main.bbl [4]
+[3]
+Underfull \vbox (badness 2173) has occurred while \output is active []
+
+ [4 <../outputs/figs/runtime-benchmark.pdf>]
+
+LaTeX Warning: Reference `tab:rlasso-performance' on page 5 undefined on input line 249.
+
+<../outputs/figs/rlasso-oracle.pdf, id=240, 433.62pt x 216.81pt>
+File: ../outputs/figs/rlasso-oracle.pdf Graphic file (type pdf)
+<use ../outputs/figs/rlasso-oracle.pdf>
+Package pdftex.def Info: ../outputs/figs/rlasso-oracle.pdf  used on input line 260.
+(pdftex.def)             Requested size: 360.0pt x 180.00848pt.
+(./main.bbl
+Underfull \vbox (badness 1442) has occurred while \output is active []
+
+ [5 <../outputs/figs/rlasso-oracle.pdf>]
 Underfull \hbox (badness 2556) in paragraph at lines 38--42
 []\OT1/cmr/m/sc/10.95 Belloni, Alexan-dre, Vic-tor Cher-nozhukov, and Chris-tian
  []
@@ -950,7 +975,7 @@ Underfull \hbox (badness 2556) in paragraph at lines 38--42
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./figs/rlasso-oracle.pdf>]
+ [6]
 Underfull \hbox (badness 1728) in paragraph at lines 91--93
 \OT1/cmr/m/sc/10.95 Ralf Gom-mers, Pauli Vir-ta-nen, David Cour-na-peau, Eric
  []
@@ -963,30 +988,33 @@ Underfull \hbox (badness 4217) in paragraph at lines 157--160
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6])
+ [7])
 
 Package natbib Warning: There were undefined citations.
 
-[7] (./main.aux)
+[8] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7FEC1748E2E6DE583628F4EAB068CAA9;3798.
+(rerunfilecheck)             Checksum: 345E3F949CA1AF259E008519849421A5;3997.
  ) 
 Here is how much of TeX's memory you used:
- 31886 strings out of 478268
- 552834 string characters out of 5846348
- 1121482 words of memory out of 5000000
- 49276 multiletter control sequences out of 15000+600000
+ 31955 strings out of 478268
+ 554309 string characters out of 5846348
+ 1124126 words of memory out of 5000000
+ 49338 multiletter control sequences out of 15000+600000
  486966 words of font info for 100 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 119i,6n,132p,3237b,1668s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/matiaspiqueras/Library/texlive/2022/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (7 pages, 345353 bytes).
+ 119i,7n,132p,3237b,1668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/matiaspiqueras/Library/texlive/2022/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on main.pdf (8 pages, 681426 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 170 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 318 compressed objects within 4 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

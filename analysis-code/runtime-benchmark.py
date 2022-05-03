@@ -2,6 +2,8 @@ import io
 import sys
 import time
 
+import matplotlib.gridspec as gridspec
+import matplotlib.pyplot as plt
 import stata_setup
 
 stata_setup.config("/Applications/Stata/", "be")
@@ -9,6 +11,8 @@ import numpy as np
 import pandas as pd
 import rpy2.robjects as ro
 import rpy2.robjects.numpy2ri
+from scipy.ndimage.interpolation import zoom
+from sklearn.linear_model import LassoCV, LassoLarsIC
 
 rpy2.robjects.numpy2ri.activate()
 from pystata import stata
@@ -89,9 +93,11 @@ class RuntimeBenchmark:
         xp = np.linspace(*self.p_range, num=B).astype(int)
 
         self.Xo, self.Yo = np.meshgrid(xn, xp)
-        rlassopy_times = np.zeros((A, B))
+        rlassomodels_times = np.zeros((A, B))
         lassopack_times = np.zeros((A, B))
         hdm_times = np.zeros((A, B))
+        lasso_cv_times = np.zeros((A, B))
+        lasso_lars_times = np.zeros((A, B))
 
         # set same number of iterations for HDM
         hdm_iter = ro.r("list(numIter=2)")
@@ -111,7 +117,7 @@ class RuntimeBenchmark:
                 rlasso.fit(X, y)
                 end = time.time()
                 rlassopy_time = end - start
-                rlassopy_times[i, j] = rlassopy_time
+                rlassomodels_times[i, j] = rlassopy_time
 
                 # lassopack rlasso time
                 df = pd.DataFrame(np.hstack([y[:, None], X]))
@@ -139,20 +145,298 @@ class RuntimeBenchmark:
                 start = time.time()
                 hdm.rlasso(x=X_r, y=y_r, controls=hdm_iter)
                 end = time.time()
-
                 hdm_time = end - start
                 hdm_times[i, j] = hdm_time
+
+                # lasso CV time
+                cv = LassoCV(cv=5, max_iter=1000)
+                start = time.time()
+                cv.fit(X, y)
+                end = time.time()
+                lasso_cv_times[i, j] = end - start
+
+                # lasso lars times
+                lars = LassoLarsIC(normalize=False, noise_variance=0.5**2)
+                start = time.time()
+                lars.fit(X, y)
+                end = time.time()
+                lasso_lars_times[i, j] = end - start
 
         if self.save_output:
             np.save("output/hdm_runtime.npy", hdm_times)
             np.save("output/lassopack_runtime.npy", lassopack_times)
-            np.save("output/rlassopy_runtime.npy", rlassopy_times)
+            np.save("output/rlassopy_runtime.npy", rlassomodels_times)
+            np.save("output/lasso_cv_runtime.npy", lasso_cv_times)
+            np.save("output/lasso_lars_runtime.npy", lasso_lars_times)
 
         self.results_ = {
             "hdm": hdm_times,
             "lassopack": lassopack_times,
-            "rlassopy": rlassopy_times,
+            "rlassomodels": rlassomodels_times,
+            "lasso_cv": lasso_cv_times,
+            "lasso_lars": lasso_lars_times,
         }
+
+    def plot_hdm_lassopack(self):
+
+        Xsm = zoom(self.Xo, 3)
+        Ysm = zoom(self.Yo, 3)
+        Z_rlassopy = zoom(self.results_["rlassomodels_times"], 3)
+        Z_lassopack = zoom(self.results_["lassopack_times"], 3)
+        Z_hdm = zoom(self.results_["hdm_times"], 3)
+
+        Z_rlassopy_vs_lassopack = Z_lassopack / Z_rlassopy
+        Z_rlassopy_vs_hdm = Z_hdm / Z_rlassopy
+
+        with plt.style.context("science"):
+            fig = plt.figure(figsize=(9, 9), dpi=300)
+            gs = gridspec.GridSpec(2, 6)
+
+            ax1a = plt.subplot(gs[0, :2])
+            ax1b = plt.subplot(gs[0, 2:4])
+            ax1c = plt.subplot(gs[0, 4:])
+            ax2a = plt.subplot(gs[1, 1:3])
+            ax2b = plt.subplot(gs[1, 3:5])
+            axdel = plt.subplot(gs[1, 5:6])
+
+            ax1a.contourf(
+                Xsm, Ysm, Z_rlassopy, 100, cmap=plt.cm.Spectral, origin="upper"
+            )
+            ax1a.contour(Xsm, Ysm, Z_rlassopy, 10, colors="black", linewidths=0.5)
+            ax1a.set_ylabel("Dimensions")
+            ax1a.set_title("rlassomodels runtime")
+            ax1a.set_xlabel("Observations")
+            # axs[0].set_xticklabels(xticks)
+            cbar = plt.imshow(Z_rlassopy, cmap=plt.cm.Spectral, interpolation="bicubic")
+            fig.colorbar(
+                cbar, ax=ax1a, orientation="vertical", shrink=0.6, label="Seconds"
+            )
+
+            ax1b.contourf(
+                Xsm, Ysm, Z_lassopack, 100, cmap=plt.cm.Spectral, origin="upper"
+            )
+            ax1b.contour(Xsm, Ysm, Z_lassopack, 10, colors="black", linewidths=0.5)
+            ax1b.set_title("lassopack runtime")
+            ax1b.set_xlabel("Observations")
+            # axs[1].set_xticklabels(xticks)
+            cbar = plt.imshow(
+                Z_lassopack, cmap=plt.cm.Spectral, interpolation="bicubic"
+            )
+            fig.colorbar(
+                cbar, ax=ax1b, orientation="vertical", shrink=0.6, label="Seconds"
+            )
+
+            ax1c.contourf(Xsm, Ysm, Z_hdm, 100, cmap=plt.cm.Spectral, origin="upper")
+            ax1c.contour(Xsm, Ysm, Z_hdm, 10, colors="black", linewidths=0.5)
+            ax1c.set_title("hdm runtime")
+            ax1c.set_xlabel("Observations")
+            # axs[2].set_xticklabels(xticks)
+            cbar = plt.imshow(Z_hdm, cmap=plt.cm.Spectral, interpolation="bicubic")
+            fig.colorbar(
+                cbar, ax=ax1c, orientation="vertical", shrink=0.6, label="Seconds"
+            )
+
+            ax2a.contourf(
+                Xsm,
+                Ysm,
+                Z_rlassopy_vs_lassopack,
+                100,
+                cmap=plt.cm.Spectral,
+                origin="upper",
+            )
+            ax2a.contour(
+                Xsm,
+                Ysm,
+                Z_rlassopy_vs_lassopack,
+                10,
+                colors="black",
+                linewidths=0.5,
+            )
+            ax2a.set_title("rlassomodels vs. lassopack")
+            ax2a.set_ylabel("Dimensions")
+            ax2a.set_xlabel("Observations")
+            cbar = plt.imshow(
+                Z_rlassopy_vs_lassopack,
+                cmap=plt.cm.Spectral,
+                interpolation="bicubic",
+            )
+            fig.colorbar(
+                cbar,
+                ax=ax2a,
+                orientation="vertical",
+                shrink=0.6,
+                label="Speedup factor",
+            )
+
+            ax2b.contourf(
+                Xsm,
+                Ysm,
+                Z_rlassopy_vs_hdm,
+                100,
+                cmap=plt.cm.Spectral,
+                origin="upper",
+            )
+            ax2b.contour(
+                Xsm, Ysm, Z_rlassopy_vs_hdm, 10, colors="black", linewidths=0.5
+            )
+            ax2b.set_title("rlassomodels vs. hdm")
+            ax2b.set_xlabel("Observations")
+            cbar = plt.imshow(
+                Z_rlassopy_vs_hdm, cmap=plt.cm.Spectral, interpolation="bicubic"
+            )
+            fig.colorbar(
+                cbar,
+                ax=ax2b,
+                orientation="vertical",
+                shrink=0.6,
+                label="Speedup factor",
+            )
+            # axs[4].set_xticklabels(xticks)
+
+            # delete axis (bug fix)
+            fig.delaxes(axdel)
+
+            plt.tight_layout()
+            if self.save_output:
+                plt.savefig("../outputs/figs/runtime-benchmark.pdf")
+            else:
+                plt.show()
+
+    def plot_sklearn(self):
+
+        Xsm = zoom(self.Xo, 3)
+        Ysm = zoom(self.Yo, 3)
+        Z_rlassomodels = zoom(self.results_["rlassomodels_times"], 3)
+        Z_lasso_cv = zoom(self.results_["lasso_cv_times"], 3)
+        Z_lasso_lars = zoom(self.results_["lasso_lars_times"], 3)
+
+        Z_rlassomodels_vs_lasso_cv = Z_lasso_cv / Z_rlassomodels
+        Z_rlassomodels_vs_lasso_lars = Z_lasso_lars / Z_rlassomodels
+
+        with plt.style.context("science"):
+            fig = plt.figure(figsize=(9, 9), dpi=300)
+            gs = gridspec.GridSpec(2, 6)
+
+            ax1a = plt.subplot(gs[0, :2])
+            ax1b = plt.subplot(gs[0, 2:4])
+            ax1c = plt.subplot(gs[0, 4:])
+            ax2a = plt.subplot(gs[1, 1:3])
+            ax2b = plt.subplot(gs[1, 3:5])
+            axdel = plt.subplot(gs[1, 5:6])
+
+            ax1a.contourf(
+                Xsm, Ysm, Z_rlassomodels, 100, cmap=plt.cm.Spectral, origin="upper"
+            )
+            ax1a.contour(Xsm, Ysm, Z_rlassomodels, 10, colors="black", linewidths=0.5)
+            ax1a.set_ylabel("Dimensions")
+            ax1a.set_title("rlassomodels runtime")
+            ax1a.set_xlabel("Observations")
+            # axs[0].set_xticklabels(xticks)
+            cbar = plt.imshow(
+                Z_rlassomodels, cmap=plt.cm.Spectral, interpolation="bicubic"
+            )
+            fig.colorbar(
+                cbar, ax=ax1a, orientation="vertical", shrink=0.6, label="Seconds"
+            )
+
+            ax1b.contourf(
+                Xsm, Ysm, Z_lasso_cv, 100, cmap=plt.cm.Spectral, origin="upper"
+            )
+            ax1b.contour(Xsm, Ysm, Z_lasso_cv, 10, colors="black", linewidths=0.5)
+            ax1b.set_title("sklearn lassocv runtime")
+            ax1b.set_xlabel("Observations")
+            # axs[1].set_xticklabels(xticks)
+            cbar = plt.imshow(Z_lasso_cv, cmap=plt.cm.Spectral, interpolation="bicubic")
+            fig.colorbar(
+                cbar, ax=ax1b, orientation="vertical", shrink=0.6, label="Seconds"
+            )
+
+            ax1c.contourf(
+                Xsm, Ysm, Z_lasso_lars, 100, cmap=plt.cm.Spectral, origin="upper"
+            )
+            ax1c.contour(Xsm, Ysm, Z_lasso_lars, 10, colors="black", linewidths=0.5)
+            ax1c.set_title("sklearn lassolars runtime")
+            ax1c.set_xlabel("Observations")
+            # axs[2].set_xticklabels(xticks)
+            cbar = plt.imshow(
+                Z_lasso_lars, cmap=plt.cm.Spectral, interpolation="bicubic"
+            )
+            fig.colorbar(
+                cbar, ax=ax1c, orientation="vertical", shrink=0.6, label="Seconds"
+            )
+
+            ax2a.contourf(
+                Xsm,
+                Ysm,
+                Z_rlassomodels_vs_lasso_cv,
+                100,
+                cmap=plt.cm.Spectral,
+                origin="upper",
+            )
+            ax2a.contour(
+                Xsm,
+                Ysm,
+                Z_rlassomodels_vs_lasso_cv,
+                10,
+                colors="black",
+                linewidths=0.5,
+            )
+            ax2a.set_title("rlassomodels vs. sklearn lassocv")
+            ax2a.set_ylabel("Dimensions")
+            ax2a.set_xlabel("Observations")
+            cbar = plt.imshow(
+                Z_rlassomodels_vs_lasso_cv,
+                cmap=plt.cm.Spectral,
+                interpolation="bicubic",
+            )
+            fig.colorbar(
+                cbar,
+                ax=ax2a,
+                orientation="vertical",
+                shrink=0.6,
+                label="Speedup factor",
+            )
+
+            ax2b.contourf(
+                Xsm,
+                Ysm,
+                Z_rlassomodels_vs_lasso_lars,
+                100,
+                cmap=plt.cm.Spectral,
+                origin="upper",
+            )
+            ax2b.contour(
+                Xsm,
+                Ysm,
+                Z_rlassomodels_vs_lasso_lars,
+                10,
+                colors="black",
+                linewidths=0.5,
+            )
+            ax2b.set_title("rlassomodels vs. sklearn lassolars")
+            ax2b.set_xlabel("Observations")
+            cbar = plt.imshow(
+                Z_rlassomodels_vs_lasso_lars,
+                cmap=plt.cm.Spectral,
+                interpolation="bicubic",
+            )
+            fig.colorbar(
+                cbar,
+                ax=ax2b,
+                orientation="vertical",
+                shrink=0.6,
+                label="Speedup factor",
+            )
+            # axs[4].set_xticklabels(xticks)
+
+            # delete axis (bug fix)
+            fig.delaxes(axdel)
+
+            plt.tight_layout()
+            if self.save_output:
+                plt.savefig("../outputs/figs/runtime-sklearn-benchmark.pdf")
+            else:
+                plt.show()
 
 
 def main():
@@ -163,6 +447,8 @@ def main():
 
     benchmark = RuntimeBenchmark(n_range, p_range, n_ticks, p_ticks)
     benchmark.run_sims()
+    benchmark.plot_hdm_lassopack()
+    benchmark.plot_sklearn()
 
 
 if __name__ == "__main__":

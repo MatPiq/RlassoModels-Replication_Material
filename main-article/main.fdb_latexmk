@@ -1,12 +1,14 @@
 # Fdb version 3
-["bibtex main"] 1651591499 "main.aux" "main.bbl" "main" 1651591510
+["bibtex main"] 1651611170 "main.aux" "main.bbl" "main" 1651611174
   "./ecta.bst" 1645901003 29984 edaf924207fbedd1f22dce19f0201a6b ""
   "/Users/matiaspiqueras/Library/texmf/bibtex/bib/Zotero.bib" 1651318516 44673 0142ad9c58455bffeea464fe5b38310e ""
-  "main.aux" 1651591510 7201 5e424302404ee227b1f403b44e595ac8 "pdflatex"
+  "main.aux" 1651611173 7814 3c284f893fb68dc205addac3c20cd7f4 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1651591509 "main.tex" "main.pdf" "main" 1651591510
+["pdflatex"] 1651611173 "main.tex" "main.pdf" "main" 1651611174
+  "../outputs/figs/rlasso-oracle.pdf" 1651589984 119218 0ca0a844158477fda6ceedbe841c122d ""
+  "../outputs/figs/runtime-benchmark.pdf" 1651611170 397643 ead4ae37f32fa89148f46353787c3a44 ""
   "/Users/matiaspiqueras/Library/texlive/2022/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1651394473 7808 c74138afcd62a6463de69383e5ff4a18 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -78,6 +80,7 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1248133631 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
@@ -218,6 +221,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty" 1640123156 44023 c6f2f55a2bb9630fba10bfd488a5addd ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def" 1601931164 19103 48d29b6e2a64cb717117ef65f107b404 ""
@@ -276,12 +280,11 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1649402051 2826437 8127b6207167e826cf3345b80751dd1a ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "figs/rlasso-oracle.pdf" 1651589984 119218 0ca0a844158477fda6ceedbe841c122d ""
-  "main.aux" 1651591510 7201 5e424302404ee227b1f403b44e595ac8 "pdflatex"
-  "main.bbl" 1651591499 8565 6fb2ca9dd71af9a8d84213c16149d000 "bibtex main"
-  "main.out" 1651591510 3798 7fec1748e2e6de583628f4eab068caa9 "pdflatex"
+  "main.aux" 1651611173 7814 3c284f893fb68dc205addac3c20cd7f4 "pdflatex"
+  "main.bbl" 1651611171 8565 6fb2ca9dd71af9a8d84213c16149d000 "bibtex main"
+  "main.out" 1651611173 3997 345e3f949ca1af259e008519849421a5 "pdflatex"
   "main.pygmented" 1650793784 6950 5f843ca7e184381eed9c33d17760d77e ""
-  "main.tex" 1651591509 11674 64426efec345c82c988281d8ac6a0ad9 ""
+  "main.tex" 1651609630 12239 ea124b0629fcf411441bec74bd34bda4 ""
   (generated)
   "main.aux"
   "main.log"

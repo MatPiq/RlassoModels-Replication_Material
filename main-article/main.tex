@@ -4,7 +4,7 @@
 \usepackage[all,arc]{xy}
 \usepackage{enumerate}
 \usepackage{mathrsfs}
-
+\usepackage{float}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
@@ -201,6 +201,13 @@ coefficients, is set to be a fraction of $p$ such that $\beta_j =
 \leq s\}$, for $j = 1,\dots,p$ and where $s = \frac{p}{5}$. All simulations Calls to
 \proglang{Stata}  
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../outputs/figs/runtime-benchmark.pdf}
+  \caption{The figure shows finite sample performance of rigorous lasso and
+    other common alternatives in terms of relative empirical risk and F1 score.}
+  \label{fig:rlasso-performance}
+\end{figure}
 
 
 \section{Monte-Carlo Examples}
@@ -250,11 +257,17 @@ overfitting to the data and selecting too many coefficients.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{figs/rlasso-oracle.pdf}
+  \includegraphics[width=\textwidth]{../outputs/figs/rlasso-oracle.pdf}
   \caption{The figure shows finite sample performance of rigorous lasso and
     other common alternatives in terms of relative empirical risk and F1 score.}
   \label{fig:rlasso-performance}
 \end{figure}
+
+\subsection{Inferential properties}
+
+We now move away from the prediction performance of rigorous lasso and focus on
+the performance of the post-double-selection and post-partialing out estimators
+when the goal is inference.
 
 
 \section{Empirical Examples}
