@@ -1,0 +1,91 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ecta.bst
+Database file #1: /Users/matiaspiqueras/Library/texmf/bibtex/bib/Zotero.bib
+Warning--I didn't find a database entry for "Breiman2001"
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1426 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1479 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1479 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1479 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1479 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+Too many commas in name 1 of "Keith Battocchi, Eleanor Dillon, Greg Lewis, Paul Oka, Miruna Oprescu, Vasilis Syrgkanis, Maggie Hei" for entry Battochi2019
+while executing---line 1495 of file ecta.bst
+n is an illegal style-file command---line 1504 of file ecta.bst
+ : n
+ :  
+You've used 23 entries,
+            2849 wiz_defined-function locations,
+            765 strings with 10144 characters,
+and the built_in function-call counts, 16809 in all, are:
+= -- 1267
+> -- 1122
+< -- 15
++ -- 367
+- -- 339
+* -- 1527
+:= -- 2642
+add.period$ -- 46
+call.type$ -- 23
+change.case$ -- 202
+chr.to.int$ -- 22
+cite$ -- 23
+duplicate$ -- 1177
+empty$ -- 1030
+format.name$ -- 439
+if$ -- 3247
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 240
+newline$ -- 74
+num.names$ -- 115
+pop$ -- 464
+preamble$ -- 1
+purify$ -- 201
+quote$ -- 0
+skip$ -- 350
+stack$ -- 0
+substring$ -- 620
+swap$ -- 602
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 276
+warning$ -- 0
+while$ -- 99
+width$ -- 0
+write$ -- 275
+(There were 21 error messages)

@@ -1,0 +1,161 @@
+\begin{thebibliography}{23}
+\newcommand{\enquote}[1]{``#1''}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[\protect\citeauthoryear{Ahrens, Hansen, and Schaffer}{Ahrens
+  et~al.}{2019}]{Ahrens2019}
+\textsc{Ahrens, Achim, Christian~B. Hansen, and Mark Schaffer} (2019):
+  \enquote{{{PDSLASSO}}: {{Stata}} Module for Post-Selection and
+  Post-Regularization {{OLS}} or {{IV}} Estimation and Inference,} .
+
+\bibitem[\protect\citeauthoryear{Ahrens, Hansen, and Schaffer}{Ahrens
+  et~al.}{2020}]{Ahrens2020}
+\textsc{Ahrens, Achim, Christian~B. Hansen, and Mark~E. Schaffer} (2020):
+  \enquote{Lassopack: {{Model}} Selection and Prediction with Regularized
+  Regression in {{Stata}},} \emph{The Stata Journal: Promoting communications
+  on statistics and Stata}, 20, 176--235.
+
+\bibitem[\protect\citeauthoryear{Bach, Chernozhukov, Kurz, and Spindler}{Bach
+  et~al.}{2021}]{Bach2021}
+\textsc{Bach, Philipp, Victor Chernozhukov, Malte~S. Kurz, and Martin Spindler}
+  (2021): \enquote{{{DoubleML}} -- {{An Object-Oriented Implementation}} of
+  {{Double Machine Learning}} in {{R}},} \emph{arXiv:2103.09603 [cs, econ,
+  stat]}.
+
+\bibitem[\protect\citeauthoryear{Barber{\'a}}{Barber{\'a}}{2015/ed}]{Barbera2015}
+\textsc{Barber{\'a}, Pablo} (2015/ed): \enquote{Birds of the {{Same Feather
+  Tweet Together}}: {{Bayesian Ideal Point Estimation Using Twitter Data}},}
+  \emph{Political Analysis}, 23, 76--91.
+
+\bibitem[\protect\citeauthoryear{Belloni and Chernozhukov}{Belloni and
+  Chernozhukov}{2013}]{Belloni2013}
+\textsc{Belloni, Alexandre and Victor Chernozhukov} (2013): \enquote{Least
+  Squares after Model Selection in High-Dimensional Sparse Models,}
+  \emph{Bernoulli}, 19.
+
+\bibitem[\protect\citeauthoryear{Belloni, Chernozhukov, and Hansen}{Belloni
+  et~al.}{2014{\natexlab{a}}}]{Belloni2014b}
+\textsc{Belloni, Alexandre, Victor Chernozhukov, and Christian Hansen}
+  (2014{\natexlab{a}}): \enquote{High-{{Dimensional Methods}} and {{Inference}}
+  on {{Structural}} and {{Treatment Effects}},} \emph{Journal of Economic
+  Perspectives}, 28, 29--50.
+
+\bibitem[\protect\citeauthoryear{Belloni, Chernozhukov, and Hansen}{Belloni
+  et~al.}{2014{\natexlab{b}}}]{Belloni2014}
+\textsc{Belloni, A., V.~Chernozhukov, and C.~Hansen} (2014{\natexlab{b}}):
+  \enquote{Inference on {{Treatment Effects}} after {{Selection}} among
+  {{High-Dimensional Controls}},} \emph{The Review of Economic Studies}, 81,
+  608--650.
+
+\bibitem[\protect\citeauthoryear{Belloni, Chernozhukov, and Wang}{Belloni
+  et~al.}{2011}]{Belloni2011}
+\textsc{Belloni, A., V.~Chernozhukov, and L.~Wang} (2011): \enquote{Square-Root
+  Lasso: Pivotal Recovery of Sparse Signals via Conic Programming,}
+  \emph{Biometrika}, 98, 791--806.
+
+\bibitem[\protect\citeauthoryear{Chetverikov, Demirer, Duflo, Hansen, Newey,
+  and Chernozhukov}{Chetverikov et~al.}{2016}]{Chetverikov2016}
+\textsc{Chetverikov, Denis, Mert Demirer, Esther Duflo, Christian Hansen,
+  Whitney~K. Newey, and Victor Chernozhukov} (2016): \enquote{Double Machine
+  Learning for Treatment and Causal Parameters,} Tech. rep., {The IFS}.
+
+\bibitem[\protect\citeauthoryear{Cohen, Hahn, Hall, Levitt, and Metcalfe}{Cohen
+  et~al.}{2016}]{Cohen2016}
+\textsc{Cohen, Peter, Robert Hahn, Jonathan Hall, Steven Levitt, and Robert
+  Metcalfe} (2016): \enquote{Using {{Big Data}} to {{Estimate Consumer
+  Surplus}}: {{The Case}} of {{Uber}},} Working {{Paper}} 22627, {National
+  Bureau of Economic Research}.
+
+\bibitem[\protect\citeauthoryear{Diamond and Boyd}{Diamond and
+  Boyd}{2016}]{Diamond2016}
+\textsc{Diamond, Steven and Stephen Boyd} (2016): \enquote{{{CVXPY}}: {{A
+  Python-embedded}} Modeling Language for Convex Optimization,} \emph{The
+  Journal of Machine Learning Research}, 17, 2909--2913.
+
+\bibitem[\protect\citeauthoryear{Fu}{Fu}{1998}]{Fu1998}
+\textsc{Fu, Wenjiang~J} (1998): \enquote{Penalized Regressions: The Bridge
+  versus the Lasso,} \emph{Journal of computational and graphical statistics},
+  7, 397--416.
+
+\bibitem[\protect\citeauthoryear{Guennebaud, Jacob et~al.}{Guennebaud
+  et~al.}{2014}]{Guennebaud2014}
+\textsc{Guennebaud, Gael, Benoit Jacob, et~al.} (2014): \enquote{Eigen: A C++
+  Linear Algebra Library,} \emph{URL http://eigen. tuxfamily. org, Accessed},
+  22.
+
+\bibitem[\protect\citeauthoryear{Harris, Millman, Van Der~Walt, Gommers,
+  Virtanen, Cournapeau, Wieser, Taylor, Berg, Smith et~al.}{Harris
+  et~al.}{2020}]{Harris2020}
+\textsc{Harris, Charles~R, K~Jarrod Millman, St{\'e}fan~J Van Der~Walt, Ralf
+  Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor,
+  Sebastian Berg, Nathaniel~J Smith, et~al.} (2020): \enquote{Array Programming
+  with {{NumPy}},} \emph{Nature}, 585, 357--362.
+
+\bibitem[\protect\citeauthoryear{Jakob, Rhinelander, and Moldovan}{Jakob
+  et~al.}{2017}]{Wenzel2017}
+\textsc{Jakob, Wenzel, Jason Rhinelander, and Dean Moldovan} (2017):
+  \enquote{Pybind11\textendash{{Seamless}} Operability between {{C}}++ 11 and
+  {{Python}},} \emph{URL: https://github. com/pybind/pybind11}.
+
+\bibitem[\protect\citeauthoryear{Keith~Battocchi}{Keith~Battocchi}{2019}]{Battochi2019}
+\textsc{Keith~Battocchi, Eleanor~Dillon, Greg Lewis Paul Oka Miruna Oprescu
+  Vasilis Syrgkanis Maggie~Hei} (2019): \enquote{{{EconML}}: {{A Python Package
+  for ML-Based Heterogeneous Treatment Effects Estimation}},} .
+
+\bibitem[\protect\citeauthoryear{Kozlowski, Taddy, and Evans}{Kozlowski
+  et~al.}{2019}]{Kozlowski2019}
+\textsc{Kozlowski, Austin~C., Matt Taddy, and James~A. Evans} (2019):
+  \enquote{The Geometry of Culture: {{Analyzing}} the Meanings of Class through
+  Word Embeddings,} \emph{American Sociological Review}, 84, 905--949.
+
+\bibitem[\protect\citeauthoryear{McKinney et~al.}{McKinney
+  et~al.}{2011}]{Mckinney2011}
+\textsc{McKinney, Wes et~al.} (2011): \enquote{Pandas: A Foundational
+  {{Python}} Library for Data Analysis and Statistics,} \emph{Python for high
+  performance and scientific computing}, 14, 1--9.
+
+\bibitem[\protect\citeauthoryear{Pedregosa, Varoquaux, Gramfort, Michel,
+  Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg et~al.}{Pedregosa
+  et~al.}{2011}]{Pedregosa2011}
+\textsc{Pedregosa, Fabian, Ga{\"e}l Varoquaux, Alexandre Gramfort, Vincent
+  Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter
+  Prettenhofer, Ron Weiss, Vincent Dubourg, et~al.} (2011):
+  \enquote{Scikit-Learn: {{Machine}} Learning in Python,} \emph{the Journal of
+  machine Learning research}, 12, 2825--2830.
+
+\bibitem[\protect\citeauthoryear{Sapiezynski, Stopczynski, Lassen, and
+  Lehmann}{Sapiezynski et~al.}{2019}]{Sapiezynski2019}
+\textsc{Sapiezynski, Piotr, Arkadiusz Stopczynski, David~Dreyer Lassen, and
+  Sune Lehmann} (2019): \enquote{Interaction Data from the {{Copenhagen
+  Networks Study}},} \emph{Scientific Data}, 6, 315.
+
+\bibitem[\protect\citeauthoryear{Seabold and Perktold}{Seabold and
+  Perktold}{2010}]{Seabold2010}
+\textsc{Seabold, Skipper and Josef Perktold} (2010): \enquote{Statsmodels:
+  {{Econometric}} and {{Statistical Modeling}} with {{Python}},} in
+  \emph{Python in {{Science Conference}}}, {Austin, Texas}, 92--96.
+
+\bibitem[\protect\citeauthoryear{Van Der~Walt, Colbert, and Varoquaux}{Van
+  Der~Walt et~al.}{2011}]{Van2011}
+\textsc{Van Der~Walt, Stefan, S~Chris Colbert, and Gael Varoquaux} (2011):
+  \enquote{The {{NumPy}} Array: A Structure for Efficient Numerical
+  Computation,} \emph{Computing in science \& engineering}, 13, 22--30.
+
+\bibitem[\protect\citeauthoryear{Virtanen, Gommers, Oliphant, Haberland, Reddy,
+  Cournapeau, Burovski, Peterson, Weckesser, Bright, {van der Walt}, Brett,
+  Wilson, Millman, Mayorov, Nelson, Jones, Kern, Larson, Carey, Polat, Feng,
+  Moore, VanderPlas, Laxalde, Perktold, Cimrman, Henriksen, Quintero, Harris,
+  Archibald, Ribeiro, Pedregosa, and {van Mulbregt}}{Virtanen
+  et~al.}{2020}]{Virtanen2020}
+\textsc{Virtanen, Pauli, Ralf Gommers, Travis~E. Oliphant, Matt Haberland,
+  Tyler Reddy, David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren
+  Weckesser, Jonathan Bright, St{\'e}fan~J. {van der Walt}, Matthew Brett,
+  Joshua Wilson, K.~Jarrod Millman, Nikolay Mayorov, Andrew R.~J. Nelson, Eric
+  Jones, Robert Kern, Eric Larson, C.~J. Carey, {\.I}lhan Polat, Yu~Feng,
+  Eric~W. Moore, Jake VanderPlas, Denis Laxalde, Josef Perktold, Robert
+  Cimrman, Ian Henriksen, E.~A. Quintero, Charles~R. Harris, Anne~M. Archibald,
+  Ant{\^o}nio~H. Ribeiro, Fabian Pedregosa, and Paul {van Mulbregt}} (2020):
+  \enquote{{{SciPy}} 1.0: Fundamental Algorithms for Scientific Computing in
+  {{Python}},} \emph{Nature Methods}, 17, 261--272.
+
+\end{thebibliography}
