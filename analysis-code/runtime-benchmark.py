@@ -181,9 +181,9 @@ class RuntimeBenchmark:
 
         Xsm = zoom(self.Xo, 3)
         Ysm = zoom(self.Yo, 3)
-        Z_rlassopy = zoom(self.results_["rlassomodels_times"], 3)
-        Z_lassopack = zoom(self.results_["lassopack_times"], 3)
-        Z_hdm = zoom(self.results_["hdm_times"], 3)
+        Z_rlassopy = zoom(self.results_["rlassomodels"], 3)
+        Z_lassopack = zoom(self.results_["lassopack"], 3)
+        Z_hdm = zoom(self.results_["hdm"], 3)
 
         Z_rlassopy_vs_lassopack = Z_lassopack / Z_rlassopy
         Z_rlassopy_vs_hdm = Z_hdm / Z_rlassopy
@@ -306,9 +306,9 @@ class RuntimeBenchmark:
 
         Xsm = zoom(self.Xo, 3)
         Ysm = zoom(self.Yo, 3)
-        Z_rlassomodels = zoom(self.results_["rlassomodels_times"], 3)
-        Z_lasso_cv = zoom(self.results_["lasso_cv_times"], 3)
-        Z_lasso_lars = zoom(self.results_["lasso_lars_times"], 3)
+        Z_rlassomodels = zoom(self.results_["rlassomodels"], 3)
+        Z_lasso_cv = zoom(self.results_["lasso_cv"], 3)
+        Z_lasso_lars = zoom(self.results_["lasso_lars"], 3)
 
         Z_rlassomodels_vs_lasso_cv = Z_lasso_cv / Z_rlassomodels
         Z_rlassomodels_vs_lasso_lars = Z_lasso_lars / Z_rlassomodels
