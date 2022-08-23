@@ -33,7 +33,6 @@ class RuntimeBenchmark:
         s=0.2,
         sigma=0.5,
         rho=0.9,
-        seed=42,
         save_output=True,
     ):
         """
@@ -49,7 +48,6 @@ class RuntimeBenchmark:
             Standard deviation of the noise.
         rho : float
             Correlation between features j-k.
-
         """
 
         self.n_range = n_range
@@ -59,10 +57,9 @@ class RuntimeBenchmark:
         self.s = s
         self.sigma = sigma
         self.rho = rho
-        self.rng = np.random.default_rng(seed=seed)
         self.save_output = save_output
 
-    def DGP(self, n, p):
+    def DGP(self, n, p, seed=1):
         """
         Generate multivariate distribution with correlated features.
 
@@ -73,16 +70,16 @@ class RuntimeBenchmark:
         p : int
             Number of features.
         """
-
+        rng = np.random.default_rng(seed=seed)
         ii = np.arange(p)
         cov = self.rho ** np.abs(np.subtract.outer(ii, ii))
-        X = self.rng.multivariate_normal(np.zeros(p), cov, n)
+        X = rng.multivariate_normal(np.zeros(p), cov, n)
 
         beta = np.zeros(p)
         nonzero = [1 for _ in range(int(p * self.s + 1))]
         beta[: len(nonzero)] = nonzero
 
-        y = X @ beta + self.sigma * self.rng.normal(size=n)
+        y = X @ beta + self.sigma * rng.normal(size=n)
 
         return X, y
 
@@ -109,7 +106,9 @@ class RuntimeBenchmark:
 
                 prog_bar.set_description(f"n={n}, p={p}")
 
-                X, y = self.DGP(n, p)
+                seed = i + j
+
+                X, y = self.DGP(n, p, seed=seed)
 
                 # rlassopy time
                 rlasso = Rlasso()
@@ -441,7 +440,7 @@ class RuntimeBenchmark:
 
 def main():
     n_range = (100, 10000)
-    p_range = (10, 800)
+    p_range = (50, 800)
     n_ticks = 20
     p_ticks = 20
 
