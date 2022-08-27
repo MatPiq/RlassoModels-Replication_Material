@@ -119,13 +119,8 @@ def run_sims_1(R=100, save_results=True):
 
                 dX = np.c_[d, X]
 
-                naive_nonzero = rlasso.fit(dX, y).nonzero_idx_
-                if 0 in naive_nonzero:
-                    X_naive = dX[:, naive_nonzero]
-                else:
-                    X_naive = np.c_[d, dX[:, naive_nonzero]]
-
-                ols = OLS(y, X_naive, None, None).fit()
+                naive = rlasso.fit(dX, y, nopen_idx=[0]).nonzero_idx_
+                ols = OLS(y, dX[:, naive], None, None).fit()
                 rlasso_alphas[r] = ols.params[0]
                 rlasso_se[r] = ols.std_errors[0]
 
@@ -167,12 +162,13 @@ def run_sims_1(R=100, save_results=True):
     }
 
     if save_results:
-        pd.DataFrame(results).to_csv("../outputs/tabs/pds-performance.csv")
+        pass
+    # pd.DataFrame(results).to_csv("../outputs/tabs/pds-performance.csv")
 
-    return results
+    return {k: v.T for k, v in results.items()}
 
 
-def plot_sims_1(sim_results, save_results=True):
+def plot_sims_1(results, save_results=True):
 
     axs = [0, 0.2, 0.4, 0.6, 0.8]
 
@@ -183,55 +179,71 @@ def plot_sims_1(sim_results, save_results=True):
         fig, axs = plt.subplots(ncols=3, nrows=4, dpi=300, figsize=(10, 8))
 
         axs = axs.flatten()
-        cmap = plt.cm.Greens
+        cmap = plt.cm.plasma
 
         axs[0].contourf(
-            X, Y, resuls["pds_bias"], 5, cmap=cmap, origin="upper", vmin=-0.5, vmax=0.5
+            X,
+            Y,
+            results["pds_bias"],
+            levels=2,
+            cmap=cmap,
+            origin="upper",
+            vmin=-0.5,
+            vmax=0.5,
         )
         CS = axs[0].contour(
             X,
             Y,
-            resuls["pds_bias"],
+            results["pds_bias"],
+            levels=4,
             colors="black",
             linewidths=0.5,
             vmin=-0.5,
             vmax=0.5,
         )
         axs[0].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[0].set_ylabel("$R2$ stage 1")
-        axs[0].set_title("pds bias")
-        axs[0].set_xlabel("$R2$ stage 2")
+        axs[0].set_ylabel("$R^2$ stage 2")
+        axs[0].set_title("PDS Bias")
+        axs[0].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["pds_bias"], cmap=cmap, interpolation="bicubic", vmin=-0.5, vmax=0.5
+            results["pds_bias"], cmap=cmap, interpolation="bicubic", vmin=-0.5, vmax=0.5
         )
         fig.colorbar(cbar, ax=axs[0], orientation="vertical", shrink=0.6)
 
         axs[1].contourf(
-            X, Y, resuls["chs_bias"], 10, cmap=cmap, origin="upper", vmin=-0.5, vmax=0.5
+            X,
+            Y,
+            results["chs_bias"],
+            100,
+            cmap=cmap,
+            origin="upper",
+            vmin=-0.5,
+            vmax=0.5,
         )
         CS = axs[1].contour(
             X,
             Y,
-            resuls["chs_bias"],
+            results["chs_bias"],
+            levels=4,
             colors="black",
             linewidths=0.5,
             vmin=-0.5,
             vmax=0.5,
         )
         axs[1].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[1].set_title("chs bias")
-        axs[1].set_xlabel("$R2$ stage 2")
+        axs[1].set_title("PPO bias")
+        axs[1].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["chs_bias"], cmap=cmap, interpolation="bicubic", vmin=-0.5, vmax=0.5
+            results["chs_bias"], cmap=cmap, interpolation="bicubic", vmin=-0.5, vmax=0.5
         )
         fig.colorbar(cbar, ax=axs[1], orientation="vertical", shrink=0.6)
 
         axs[2].contourf(
             X,
             Y,
-            resuls["rlasso_bias"],
+            results["rlasso_bias"],
             100,
             cmap=cmap,
             origin="upper",
@@ -241,18 +253,19 @@ def plot_sims_1(sim_results, save_results=True):
         CS = axs[2].contour(
             X,
             Y,
-            resuls["rlasso_bias"],
+            results["rlasso_bias"],
+            levels=4,
             colors="black",
             linewidths=0.5,
             vmin=-0.5,
             vmax=0.5,
         )
         axs[2].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[2].set_title("naive post-lasso bias")
-        axs[2].set_xlabel("$R2$ stage 2")
+        axs[2].set_title("Naive Post-Lasso Bias")
+        axs[2].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["rlasso_bias"],
+            results["rlasso_bias"],
             cmap=cmap,
             interpolation="bicubic",
             vmin=-0.5,
@@ -260,99 +273,154 @@ def plot_sims_1(sim_results, save_results=True):
         )
         fig.colorbar(cbar, ax=axs[2], orientation="vertical", shrink=0.6, label="bias")
 
-        cmap = plt.cm.Blues
+        cmap = plt.cm.viridis
 
         axs[3].contourf(
-            X, Y, resuls["pds_std"], 5, cmap=cmap, origin="upper", vmin=0, vmax=0.3
+            X, Y, results["pds_std"], 100, cmap=cmap, origin="upper", vmin=0, vmax=0.3
         )
         CS = axs[3].contour(
-            X, Y, resuls["pds_std"], colors="black", linewidths=0.5, vmin=0, vmax=0.3
+            X,
+            Y,
+            results["pds_std"],
+            4,
+            colors="black",
+            linewidths=0.5,
+            vmin=0,
+            vmax=0.3,
         )
         axs[3].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[3].set_ylabel("$R2$ stage 1")
-        axs[3].set_title("pds std")
-        axs[3].set_xlabel("$R2$ stage 2")
+        axs[3].set_ylabel("$R^2$ stage 2")
+        axs[3].set_title("PDS Std")
+        axs[3].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["pds_std"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.3
+            results["pds_std"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.3
         )
         fig.colorbar(cbar, ax=axs[3], orientation="vertical", shrink=0.6)
 
         axs[4].contourf(
-            X, Y, resuls["chs_std"], 10, cmap=cmap, origin="upper", vmin=0, vmax=0.3
+            X, Y, results["chs_std"], 100, cmap=cmap, origin="upper", vmin=0, vmax=0.3
         )
         CS = axs[4].contour(
-            X, Y, resuls["chs_std"], colors="black", linewidths=0.5, vmin=0, vmax=0.3
+            X,
+            Y,
+            results["chs_std"],
+            4,
+            colors="black",
+            linewidths=0.5,
+            vmin=0,
+            vmax=0.3,
         )
         axs[4].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[4].set_title("chs std")
-        axs[4].set_xlabel("$R2$ stage 2")
+        axs[4].set_title("PPO Std")
+        axs[4].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["chs_std"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.3
+            results["chs_std"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.3
         )
         fig.colorbar(cbar, ax=axs[4], orientation="vertical", shrink=0.6)
 
         axs[5].contourf(
-            X, Y, resuls["rlasso_std"], 100, cmap=cmap, origin="upper", vmin=0, vmax=0.3
+            X,
+            Y,
+            results["rlasso_std"],
+            100,
+            cmap=cmap,
+            origin="upper",
+            vmin=0,
+            vmax=0.3,
         )
         CS = axs[5].contour(
-            X, Y, resuls["rlasso_std"], colors="black", linewidths=0.5, vmin=0, vmax=0.3
+            X,
+            Y,
+            results["rlasso_std"],
+            4,
+            colors="black",
+            linewidths=0.5,
+            vmin=0,
+            vmax=0.3,
         )
         axs[5].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[5].set_title("naive post-lasso std")
-        axs[5].set_xlabel("$R2$ stage 2")
+        axs[5].set_title("Naive Post-Lasso Std")
+        axs[5].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["rlasso_std"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.3
+            results["rlasso_std"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.3
         )
         fig.colorbar(cbar, ax=axs[5], orientation="vertical", shrink=0.6, label="std")
 
-        cmap = plt.cm.Reds
-
+        cmap = plt.cm.coolwarm
         axs[6].contourf(
-            X, Y, resuls["pds_cov"], 5, cmap=cmap, origin="upper", vmin=0, vmax=0.4
+            X, Y, results["pds_cov"], 100, cmap=cmap, origin="upper", vmin=0, vmax=0.4
         )
         CS = axs[6].contour(
-            X, Y, resuls["pds_cov"], colors="black", linewidths=0.5, vmin=0, vmax=0.4
+            X,
+            Y,
+            results["pds_cov"],
+            4,
+            colors="black",
+            linewidths=0.5,
+            vmin=0,
+            vmax=0.4,
         )
         axs[6].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[6].set_ylabel("$R2$ stage 1")
-        axs[6].set_title("pds coverage")
-        axs[6].set_xlabel("$R2$ stage 2")
+        axs[6].set_ylabel("$R^2$ stage 2")
+        axs[6].set_title("PDS Coverage")
+        axs[6].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["pds_cov"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.4
+            results["pds_cov"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.4
         )
         fig.colorbar(cbar, ax=axs[6], orientation="vertical", shrink=0.6)
 
         axs[7].contourf(
-            X, Y, resuls["chs_cov"], 10, cmap=cmap, origin="upper", vmin=0, vmax=0.4
+            X, Y, results["chs_cov"], 100, cmap=cmap, origin="upper", vmin=0, vmax=0.4
         )
         CS = axs[7].contour(
-            X, Y, resuls["chs_cov"], colors="black", linewidths=0.5, vmin=0, vmax=0.4
+            X,
+            Y,
+            results["chs_cov"],
+            4,
+            colors="black",
+            linewidths=0.5,
+            vmin=0,
+            vmax=0.4,
         )
         axs[7].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[7].set_title("chs coverage")
-        axs[7].set_xlabel("$R2$ stage 2")
+        axs[7].set_title("PPO Coverage")
+        axs[7].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["chs_cov"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.4
+            results["chs_cov"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.4
         )
         fig.colorbar(cbar, ax=axs[7], orientation="vertical", shrink=0.6)
 
         axs[8].contourf(
-            X, Y, resuls["rlasso_cov"], 10, cmap=cmap, origin="upper", vmin=0, vmax=0.4
+            X,
+            Y,
+            results["rlasso_cov"],
+            100,
+            cmap=cmap,
+            origin="upper",
+            vmin=0,
+            vmax=0.4,
         )
         CS = axs[8].contour(
-            X, Y, resuls["rlasso_cov"], colors="black", linewidths=0.5, vmin=0, vmax=0.4
+            X,
+            Y,
+            results["rlasso_cov"],
+            4,
+            colors="black",
+            linewidths=0.5,
+            vmin=0,
+            vmax=0.4,
         )
         axs[8].clabel(CS, inline=True, fontsize=8, colors="black")
-        axs[8].set_title("rlasso coverage")
-        axs[8].set_xlabel("$R2$ stage 2")
+        axs[8].set_title("Naive Post-Lasso Coverage")
+        axs[8].set_xlabel("$R^2$ stage 1")
         # axs[0].set_xticklabels(xticks)
         cbar = plt.imshow(
-            resuls["rlasso_cov"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.4
+            results["rlasso_cov"], cmap=cmap, interpolation="bicubic", vmin=0, vmax=0.4
         )
         fig.colorbar(cbar, ax=axs[8], orientation="vertical", shrink=0.6)
         fig.tight_layout()
@@ -383,14 +451,8 @@ def run_sims_2(rho=0.5, R=500, R21=0.5, R22=0.5):
         y, d, X = DGP(alpha=alpha0, rho=rho, R21=R21, R22=R22, design=4)
 
         dX = np.c_[d, X]
-
-        naive_nonzero = rlasso.fit(dX, y).nonzero_idx_
-        if 0 in naive_nonzero:
-            X_naive = dX[:, naive_nonzero]
-        else:
-            X_naive = np.c_[d, dX[:, naive_nonzero]]
-
-        ols = OLS(y, X_naive, None, None).fit()
+        naive = rlasso.fit(dX, y, nopen_idx=[0]).nonzero_idx_
+        ols = OLS(y, dX[:, naive], None, None).fit()
         rlasso_alphas[r] = ols.params[0]
 
         pds_fitted = pds.fit(X, y, d)
@@ -413,12 +475,12 @@ def plot_sims_2(rlasso_alphas, pds_alphas, save_results=True):
 
         sns.histplot(norm_pds, ax=axs[0], stat="density")
         axs[0].plot(x, st.norm.pdf(x, mu, sigma), "r")
-        axs[0].set_title("post-double-selection")
+        axs[0].set_title("Post-Double-Selection")
         axs[0].set_xlabel("$\\hat{\\alpha} - \\alpha_0 / \\hat{\\sigma}$")
 
         sns.histplot(norm_rlasso, ax=axs[1], stat="density")
         axs[1].plot(x, st.norm.pdf(x, mu, sigma), "r")
-        axs[1].set_title("naive post-lasso")
+        axs[1].set_title("Naive Post-Lasso")
         axs[1].set_xlabel("$\\hat{\\alpha} - \\alpha_0 / \\hat{\\sigma}$")
 
         if save_results:
